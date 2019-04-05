@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <top>
+      <VBox fx:id="vbox_app" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="hbox_user" alignment="TOP_CENTER" prefHeight="102.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <Label text="Pseudo :">
+                     <opaqueInsets>
+                        <Insets left="15.0" />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_pseudo" promptText="Pseudo">
+                     <padding>
+                        <Insets top="3.0" />
+                     </padding>
+                  </TextField>
+                  <Button fx:id="btn_jouer" mnemonicParsing="false" onAction="#clickJouer" text="Jouer" />
+                  <Button fx:id="btn_scores" mnemonicParsing="false" onAction="#clickScores" text="Scores">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="label_hour" text="4:20" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="40.0" top="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" top="4.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox fx:id="hbox_operations" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Button fx:id="plus" mnemonicParsing="false" text="+" />
+                  <Button fx:id="minus" mnemonicParsing="false" text="-" />
+                  <Button fx:id="mult" mnemonicParsing="false" text="x" />
+                  <Button fx:id="div" mnemonicParsing="false" text="/" />
+               </children>
+            </HBox>
+            <ButtonBar fx:id="btn_bar" prefHeight="40.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets right="50.0" />
+               </VBox.margin>
+            </ButtonBar>
+            <HBox prefHeight="92.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="txt_operation" editable="false" prefHeight="26.0" prefWidth="248.0" promptText="Operation">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin></TextField>
+                  <Button fx:id="btn_annuler" mnemonicParsing="false" onAction="#clickAnnuler" text="Annuler">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_valider" mnemonicParsing="false" onAction="#clickValider" text="Valider" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="308.0" prefWidth="600.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="230.0" prefWidth="321.0">
+                     <children>
+                        <ScrollPane prefHeight="194.0" prefWidth="321.0">
+                           <content>
+                              <TextArea fx:id="txt_console" editable="false" prefHeight="200.0" prefWidth="363.0" />
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="btn_supprimer" mnemonicParsing="false" onAction="#clickSupprimer" text="Supprimer" textAlignment="CENTER">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="230.0" prefWidth="278.0">
+                     <children>
+                        <Label fx:id="label_nb" text="NB" />
+                        <Label fx:id="label_solution" text="Nombre à trouver" />
+                        <Button fx:id="btn_proposer" mnemonicParsing="false" onAction="#clickProposer" text="Proposer">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="label_time" textAlignment="CENTER">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="37.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <padding>
+      <Insets left="30.0" />
+   </padding>
+</BorderPane>
